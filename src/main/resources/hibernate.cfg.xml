@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- 方言 -->
+        <property name="dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+        <!-- 链接地址 -->
+        <property name="connection.url">
+            jdbc:mysql://localhost:3306/JavaWeb
+        </property>
+        <!-- 数据库user -->
+        <property name="connection.username">bn</property>
+        <!-- 数据库user密码 -->
+        <property name="connection.password">bn</property>
+        <!-- 连接driver -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!-- 映射文件 -->
+        <mapping resource="User.hbm.xml"/>
+        <mapping resource="Category.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
