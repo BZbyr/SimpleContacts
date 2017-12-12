@@ -48,41 +48,82 @@ public class UserDAO {
         }
     }
 
-    public static void deleteUser(int id) {
-        Session session= null;
+    public void deleteUser(int id) {
+        Session session = null;
+        Transaction tx = null;
         try {
             session = HibernateSessionFactory.getSession();
-            session.beginTransaction();
-            User user=(User)session.get(User.class, id);
-            session.delete(user);
-            session.getTransaction().commit();
-            session.clear();
-            session.close();
+            tx = session.beginTransaction();
+            // 先根据id查询对象，再判断删除
+            User user = (User) session.get(User.class, id);
+            if (user != null) {
+                session.delete(user);
+            }
         } catch (Exception e) {
             // TODO: handle exception
-            e.printStackTrace();
-        }
 
+            // 进行事务的回滚
+            if (tx != null) {
+                tx.rollback();
+            } else {
+                e.printStackTrace();
+            }
+            throw new RuntimeException(e);
+        } finally {
+            // 进行事务的提交
+            assert tx != null;
+            tx.commit();
+            // 关闭session
+            session.close();
+        }
     }
 
     public static void updateUser(User user){
+        Session session = null;
+        Transaction tx = null;
+        try {
+            // 获取Session
+            session = HibernateSessionFactory.getSession();
+            // 开启事务
+            tx = session.beginTransaction();
+            // 用户的更新
+            session.update(user);
+        } catch (Exception e) {
+            // TODO: handle exception
 
+            // 进行事务的回滚
+            if (tx != null) {
+                tx.rollback();
+            } else {
+                e.printStackTrace();
+            }
+            throw new RuntimeException(e);
+        } finally {
+            // 进行事务的提交
+            assert tx != null;
+            tx.commit();
+            // 关闭session
+            session.close();
+        }
     }
 
     public static List<User> getUserList() {
-        Session session=HibernateSessionFactory.getSession();
+        Session session = null;
+        Transaction tx = null;
         try {
-
-            Criteria criteria=session.createCriteria(User.class);
-
-            List<User> users=criteria.list();
-
-            session.close();
-            return users;
+            session = HibernateSessionFactory.getSession();
+            tx = session.beginTransaction();
+            List<User> result = session.createQuery("from User").getResultList();
+            return result;
         } catch (Exception e) {
-            // TODO: handle exception
-            e.printStackTrace();
+            // 进行事务的回滚
+            tx.rollback();
+            throw new RuntimeException(e);
+        } finally {
+            // 进行事务的提交
+            tx.commit();
+            // 关闭session
+            session.close();
         }
-        return null;
     }
 }
