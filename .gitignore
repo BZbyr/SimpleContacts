@@ -1,8 +1,6 @@
 
-.DS_Store
+\.idea/libraries/
 
-.idea/workspace.xml
+\.idea/workspace\.xml
 
-.idea/libraries
-
-*.iml
+SimpleContacts\.iml
