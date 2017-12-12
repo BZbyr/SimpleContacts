@@ -13,7 +13,7 @@ public class User implements Serializable{
     private static final long serialVersionUID = 1L;
 
     private int id;
-    private String userName;
+    private String name;
     private String category;
     private String phone;
     private String mail;
@@ -21,8 +21,8 @@ public class User implements Serializable{
 
     public User(){}
 
-    public User(String userName, String category, String phone, String mail, String description){
-        this.userName = userName;
+    public User(String name, String category, String phone, String mail, String description){
+        this.name = name;
         this.category = category;
         this.phone = phone;
         this.mail = mail;
@@ -38,12 +38,12 @@ public class User implements Serializable{
     }
 
 
-    public String getUserName() {
-        return this.userName;
+    public String getName() {
+        return this.name;
     }
 
-    public void setUserName(String name) {
-        this.userName = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCategory() {
@@ -82,6 +82,6 @@ public class User implements Serializable{
 
     @Override
     public String toString() {
-        return getId()+" "+getUserName()+" "+getCategory()+" "+getPhone()+" "+getMail()+" "+getDescription();
+        return getId()+" "+getName()+" "+getCategory()+" "+getPhone()+" "+getMail()+" "+getDescription();
     }
 }

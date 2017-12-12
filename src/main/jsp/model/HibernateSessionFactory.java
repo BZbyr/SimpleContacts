@@ -1,10 +1,5 @@
 package model;
-/**
- * Created by IntelliJ IDEA
- * Project: SimpleContacts
- * Author: Boyang
- * Date: 2017/12/11 21:48
- */
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
@@ -12,7 +7,6 @@ import org.hibernate.cfg.Configuration;
 /**
  *
  *
- * @package: model
  * @class: HibernateSessionFactory
  * @author: Boyang
  * @date: 2017/12/11 21:48
