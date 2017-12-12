@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="SimpleContacts:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="SimpleContacts.war">
-      <element id="artifact" artifact-name="SimpleContacts:war exploded" />
-    </root>
-  </artifact>
-</component>
