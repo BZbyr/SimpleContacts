@@ -9,6 +9,11 @@
 
     <package name="SimpleContacts" extends="struts-default">
 
+        <action name="userAction" class="action.UserAction">
+            <result name="success">/userList.jsp</result>
+            <result name="user">/userList.jsp</result>
+            <result name="toAddUser">/addUser.jsp</result>
+        </action>
 
     </package>
 </struts>

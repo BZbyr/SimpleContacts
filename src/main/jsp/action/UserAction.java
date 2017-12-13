@@ -24,17 +24,54 @@ public class UserAction extends ActionSupport{
         return SUCCESS;
     }
 
+    public String toAddUser()throws Exception{
+        return "toAddUser";
+    }
+
     public String addUser() throws Exception{
+
         ActionContext context = ActionContext.getContext();
         HttpServletRequest request = ServletActionContext.getRequest();
+
         String userName = request.getParameter("name");
         String category = request.getParameter("category");
         String phone = request.getParameter("phone");
         String mail = request.getParameter("mail");
         String description = request.getParameter("description");
+
         UserDAO.add(userName, category, phone, mail, description);
+
         List<User> userList = UserDAO.getAllList();
+
         context.put("userList", userList);
+
+        return "user";
+    }
+
+    public String delUser()throws Exception{
+
+        ActionContext context=ActionContext.getContext();
+        HttpServletRequest request=ServletActionContext.getRequest();
+
+        String id=request.getParameter("id");
+
+        UserDAO.delete(Integer.parseInt(id));
+
+        List<User> userList=UserDAO.getAllList();
+
+        context.put("userList", userList);
+
+        return "user";
+    }
+
+    public String showUserList()throws Exception{
+
+        ActionContext context=ActionContext.getContext();
+
+        List<User> userList=UserDAO.getAllList();
+
+        context.put("userList", userList);
+
 
         return "user";
     }
