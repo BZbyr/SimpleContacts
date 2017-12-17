@@ -26,27 +26,6 @@
           <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
           <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.44" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-server:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-http:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-io:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-webapp:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-xml:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-servlet:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-security:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-annotations:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-plus:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-jndi:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: javax.annotation:javax.annotation-api:1.2" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.1" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm-commons:5.1" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm-tree:5.1" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:apache-jsp:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-util:9.4.7.v20170914" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty.toolchain:jetty-schemas:3.1" />
-          <element id="library" level="project" name="Maven: org.mortbay.jasper:apache-jsp:8.5.9.1" />
-          <element id="library" level="project" name="Maven: org.mortbay.jasper:apache-el:8.5.9.1" />
-          <element id="library" level="project" name="Maven: org.eclipse.jdt.core.compiler:ecj:4.4.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

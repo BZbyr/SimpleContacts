@@ -15,9 +15,9 @@
 <center>
     <hr>
     <h1>通讯录</h1>
-    <s:a action="userAction" method="toAddUser">添加联系人</s:a><br>
+    <s:a action="toAddUser">添加联系人</s:a><br>
 
-    <a href="deleteContact.jsp">删除联系人</a><br>
+    <s:a href="deleteContact.jsp">删除联系人</s:a><br>
 
     <a href="viewContact.jsp">查看所有联系人</a><br>
 

@@ -7,11 +7,13 @@
 <struts>
     <constant name="struts.devMode" value="true" />
 
-    <package name="SimpleContacts" extends="struts-default">
+    <package name="contact" extends="struts-default">
 
-        <action name="userAction" class="action.UserAction">
-            <result name="success">/userList.jsp</result>
+        <action name="addUser" class="com.boyang.action.UserAction" method="addUser">
             <result name="user">/userList.jsp</result>
+        </action>
+
+        <action name="toAddUser" class="com.boyang.action.UserAction" method="toAddUser">
             <result name="toAddUser">/addUser.jsp</result>
         </action>
 

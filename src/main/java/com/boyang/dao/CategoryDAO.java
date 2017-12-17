@@ -1,4 +1,4 @@
-package dao;
+package com.boyang.dao;
 
 
 import java.util.ArrayList;
@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.hibernate.*;
 
-import model.Category;
-import model.HibernateSessionFactory;
+import com.boyang.model.Category;
+import com.boyang.model.HibernateSessionFactory;
 import org.hibernate.query.Query;
 /**
  *
@@ -101,35 +101,21 @@ public class CategoryDAO{
         }
     }
 
-    public static List<Category> getAllList() {
-        Session session = null;
-        Transaction tx = null;
-        List<Category> resultList = new ArrayList<Category>();
+    public List<Category> getAllList() {
+        Session session = HibernateSessionFactory.getSession();
+
         try {
-            session = HibernateSessionFactory.getSession();
-            tx = session.beginTransaction();
+            List<Category> resultList = new ArrayList<Category>();
             Query query = session.createQuery("FROM Category ");
             for (Object oneObject:query.getResultList()){
                 resultList.add((Category) oneObject);
             }
+            session.close();
             return resultList;
         } catch (Exception e) {
             // TODO: handle exception
-
-            // 进行事务的回滚
-            if (tx != null) {
-                tx.rollback();
-            } else {
-                e.printStackTrace();
-            }
-            throw new RuntimeException(e);
-        } finally {
-            // 进行事务的提交
-            assert tx != null;
-            tx.commit();
-            // 关闭session
-            session.close();
+            e.printStackTrace();
         }
-
+        return null;
     }
 }

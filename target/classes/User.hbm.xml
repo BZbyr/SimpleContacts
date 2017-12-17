@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping schema="JaveWeb">
+<hibernate-mapping>
     <!--映射数据库的user表 -->
-    <class name="model.User" table="user" schema="JaveWeb">
+    <class name="com.boyang.model.User" table="user">
         <!--映射id属性 -->
         <id name="id" type="java.lang.Integer">
-            <column name="id" />
+            <column name="id" length="11"/>
             <generator class="identity" />
         </id>
         <!-- 映射name属性-->
         <property name="name" type="java.lang.String">
-            <column name="name" length="45" />
+            <column name="name" length="80"/>
+        </property>
+
+        <!-- 映射category属性-->
+        <property name="category" type="java.lang.String">
+            <column name="category" length="30"/>
+        </property>
+
+        <!-- 映射phone属性-->
+        <property name="phone" type="java.lang.String">
+            <column name="phone" length="30"/>
+        </property>
+
+        <!-- 映射mail属性-->
+        <property name="mail" type="java.lang.String">
+            <column name="mail" length="128"/>
+        </property>
+
+        <!-- 映射description属性-->
+        <property name="description" type="java.lang.String">
+            <column name="description" length="255"/>
         </property>
     </class>
 </hibernate-mapping>

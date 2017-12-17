@@ -1,0 +1,6 @@
+com\boyang\dao\CategoryDAO.class
+com\boyang\action\UserAction.class
+com\boyang\model\Category.class
+com\boyang\dao\UserDAO.class
+com\boyang\model\User.class
+com\boyang\model\HibernateSessionFactory.class

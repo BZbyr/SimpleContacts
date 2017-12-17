@@ -1,4 +1,4 @@
-package model;
+package com.boyang.model;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -13,7 +13,7 @@ import org.hibernate.cfg.Configuration;
  */
 public class HibernateSessionFactory {
 
-    private static String CONFIG_FILE_LOCATION = "resources/hibernate.cfg.xml";
+    private static String CONFIG_FILE_LOCATION = "hibernate.cfg.xml";
     private static final ThreadLocal<Session> THREAD_LOCAL = new ThreadLocal<Session>();
     private  static Configuration configuration = new Configuration();
     private static org.hibernate.SessionFactory sessionFactory;

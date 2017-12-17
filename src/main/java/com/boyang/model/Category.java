@@ -1,5 +1,8 @@
-package model;
+package com.boyang.model;
 
+import org.hibernate.annotations.Table;
+
+import javax.persistence.Entity;
 import java.io.Serializable;
 
 /**
