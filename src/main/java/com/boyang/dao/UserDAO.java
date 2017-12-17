@@ -17,15 +17,9 @@ import org.hibernate.query.Query;
  */
 public class UserDAO{
 
-    public static void add(String name, String category, String phone, String mail, String description) {
+    public static void add(User user) {
         Session session = null;
         Transaction tx = null;
-        User user=new User();
-        user.setName(name);
-        user.setCategory(category);
-        user.setPhone(phone);
-        user.setMail(mail);
-        user.setDescription(description);
         try {
             // 获取Session
             session = HibernateSessionFactory.getSession();

@@ -19,6 +19,16 @@ import org.apache.struts2.ServletActionContext;
  */
 public class UserAction extends ActionSupport{
 
+    private User user= new User();
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser(){
+        return user;
+    }
+
     @Override
     public String execute() throws Exception {
         return SUCCESS;
@@ -31,15 +41,8 @@ public class UserAction extends ActionSupport{
     public String addUser() throws Exception{
 
         ActionContext context = ActionContext.getContext();
-        HttpServletRequest request = ServletActionContext.getRequest();
 
-        String userName = request.getParameter("name");
-        String category = request.getParameter("category");
-        String phone = request.getParameter("phone");
-        String mail = request.getParameter("mail");
-        String description = request.getParameter("description");
-
-        UserDAO.add(userName, category, phone, mail, description);
+        UserDAO.add(user);
 
         List<User> userList = UserDAO.getAllList();
 
