@@ -54,6 +54,8 @@ public class UserAction extends ActionSupport{
 
     public String addUser() throws Exception{
 
+        ActionContext context=ActionContext.getContext();
+
         UserDAO userDAO = new UserDAO();
         System.out.println("----------------------------------------------------");
         System.out.println(getUser().toString());
@@ -66,7 +68,7 @@ public class UserAction extends ActionSupport{
         System.out.println(userList.get(0).toString());
         System.out.println(userList.get(1).toString());
         System.out.println(userList.get(2).toString());
-
+        context.put("userList",userList);
 
         return "user";
     }

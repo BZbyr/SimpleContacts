@@ -19,9 +19,45 @@
 
     <s:a href="deleteContact.jsp">删除联系人</s:a><br>
 
-    <a href="viewContact.jsp">查看所有联系人</a><br>
+    <s: action="showUserList">查看所有联系人</s:><br>
 
     <hr>
+    <%
+        int num = 1;
+    %>
+    <table>
+        <tr>
+            <td>行数</td>
+            <td>姓名</td>
+            <td>分类</td>
+            <td>电话</td>
+            <td>邮件</td>
+            <td>描述</td>
+        </tr>
+
+        <s:iterator var="user" value="#request.userList">
+            <tr>
+                <td>
+                    <%=num++%>
+                </td>
+                <td>
+                    <s:property value="#user.name"/>
+                </td>
+                <td>
+                    <s:property value="#user.category"/>
+                </td>
+                <td>
+                    <s:property value="#user.phone"/>
+                </td>
+                <td>
+                    <s:property value="#user.mail"/>
+                </td>
+                <td>
+                    <s:property value="#user.description"/>
+                </td>
+            </tr>
+        </s:iterator>
+    </table>
 </center>
 </body>
 </html>
