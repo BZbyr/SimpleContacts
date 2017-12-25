@@ -10,7 +10,7 @@
         </property>
         <!-- 链接地址 -->
         <property name="connection.url">
-            jdbc:mysql://10.112.3.93:3306/JavaWeb
+            jdbc:mysql://localhost:3306/JavaWeb
         </property>
         <!-- 数据库user -->
         <property name="connection.username">bn</property>

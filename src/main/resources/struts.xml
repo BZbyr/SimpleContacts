@@ -20,7 +20,5 @@
         <action name="showUserList" class="com.boyang.action.UserAction" method="showUserList">
             <result name="user">/userList.jsp</result>
         </action>
-
-
     </package>
 </struts>

@@ -19,12 +19,9 @@
 
     <s:a href="deleteContact.jsp">删除联系人</s:a><br>
 
-    <s: action="showUserList">查看所有联系人</s:><br>
+    <s:a action="showUserList">查看所有联系人</s:a><br>
 
     <hr>
-    <%
-        int num = 1;
-    %>
     <table>
         <tr>
             <td>行数</td>
@@ -38,7 +35,7 @@
         <s:iterator var="user" value="#request.userList">
             <tr>
                 <td>
-                    <%=num++%>
+                    <s:property value="#user.id"/>
                 </td>
                 <td>
                     <s:property value="#user.name"/>
