@@ -1,6 +1,7 @@
-E:\Document\Code\SimpleContacts\src\main\java\com\boyang\dao\UserDAO.java
-E:\Document\Code\SimpleContacts\src\main\java\com\boyang\model\Category.java
-E:\Document\Code\SimpleContacts\src\main\java\com\boyang\dao\CategoryDAO.java
-E:\Document\Code\SimpleContacts\src\main\java\com\boyang\model\HibernateSessionFactory.java
-E:\Document\Code\SimpleContacts\src\main\java\com\boyang\action\UserAction.java
-E:\Document\Code\SimpleContacts\src\main\java\com\boyang\model\User.java
+/Users/boyang/Code/Projects/SimpleContacts/src/main/java/com/boyang/model/User.java
+/Users/boyang/Code/Projects/SimpleContacts/src/main/java/com/boyang/model/HibernateSessionFactory.java
+/Users/boyang/Code/Projects/SimpleContacts/src/main/java/com/boyang/dao/CategoryDAO.java
+/Users/boyang/Code/Projects/SimpleContacts/src/main/java/com/boyang/dao/UserDAO.java
+/Users/boyang/Code/Projects/SimpleContacts/src/main/java/com/boyang/action/UserAction.java
+/Users/boyang/Code/Projects/SimpleContacts/src/main/java/com/boyang/action/AddAction.java
+/Users/boyang/Code/Projects/SimpleContacts/src/main/java/com/boyang/model/Category.java

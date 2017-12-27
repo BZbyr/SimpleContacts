@@ -10,6 +10,9 @@
       </list>
     </option>
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/boyang/action/AddAction-Validation" />
+  </component>
   <component name="ProjectResources">
     <resource url="http://getahead.org/dwr/dwr30.dtd" location="$MAVEN_REPOSITORY$/uk/ltd/getahead/dwr/1.1.1/dwr-1.1.1.jar" />
   </component>
