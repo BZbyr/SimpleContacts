@@ -10,6 +10,9 @@
       </list>
     </option>
   </component>
+  <component name="ProjectResources">
+    <resource url="http://getahead.org/dwr/dwr30.dtd" location="$MAVEN_REPOSITORY$/uk/ltd/getahead/dwr/1.1.1/dwr-1.1.1.jar" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
