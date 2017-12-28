@@ -15,8 +15,17 @@
 </head>
 <jsp:useBean id="category" class="com.boyang.dao.CategoryDAO" scope="page"/>
 <body>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("p").css("background-color","red");
+        });
+    });
+</script>
+<!--
 <script language="JavaScript">
-    <!--
+
     /**
      * @return {boolean}
      */
@@ -38,8 +47,8 @@ function RgTest() {
         }
         return true;
     }
-    //-->
-</script>
+    //
+</script>-->
 <center>
     <s:form action="addUser">
         <table bgcolor="#0099CC">
@@ -49,7 +58,7 @@ function RgTest() {
             <tr><s:textfield id="description" name="user.description" label="联系人描述"/></tr>
             <tr><s:select name="user.category" label="联系人分类" list="categoryList" listKey="id" listValue="name"/></tr>
             <tr>
-                <td><s:submit value="提交" onClick="return RgTest()"/></td>
+                <td><s:submit id="button" value="提交"/></td>
             </tr>
         </table>
     </s:form>
