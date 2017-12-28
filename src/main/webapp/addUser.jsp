@@ -8,11 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" language="java" import="java.util.*, com.boyang.model.*, java.io.*" %>
 <%@ page import="com.boyang.dao.CategoryDAO" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib prefix="sd" uri="/struts-dojo-tags" %>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags" %>
 <html>
 <head>
     <title>addUser</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <sx:head/>
 </head>
 
 <body><!--
@@ -41,20 +42,22 @@ function RgTest() {
     }
 
 </script>//-->
-<sd:head/>
+
 <center>
-    <s:form action="addUser" validate="true" theme="ajax">
+    <s:form id="form" action="addUser" validate="true">
         <table bgcolor="#0099CC">
             <tr><s:textfield id="name" name="name" label="联系人姓名"/></tr>
             <tr><s:textfield id="phone" name="phone" label="联系人电话"/></tr>
             <tr><s:textfield id="mail" name="mail" label="联系人邮箱"/></tr>
             <tr><s:textfield id="description" name="description" label="联系人描述"/></tr>
             <tr><s:select name="category" label="联系人分类" list="categoryList" listKey="id" listValue="name"/></tr>
+
+        </table>
     </s:form>
-            <tr><sd:submit value="提交"/></tr>
+    <table>
+        <tr><sx:submit type="button" label="提交" formId="form"/></tr>
     </table>
 </center>
-
 
 </body>
 </html>
