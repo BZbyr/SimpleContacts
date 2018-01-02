@@ -1,3 +1,9 @@
 <component name="ProjectDictionaryState">
-  <dictionary name="boyang" />
+  <dictionary name="boyang">
+    <words>
+      <w>maxlength</w>
+      <w>minlength</w>
+      <w>rangelength</w>
+    </words>
+  </dictionary>
 </component>

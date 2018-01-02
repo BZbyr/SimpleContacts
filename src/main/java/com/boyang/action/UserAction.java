@@ -20,6 +20,11 @@ import com.boyang.model.User;
 public class UserAction extends ActionSupport{
 
     private User user= new User();
+    private String name;
+    private String category;
+    private String phone;
+    private String mail;
+    private String description;
     private List<Category> categoryList;
 
     public UserAction(){
@@ -27,6 +32,53 @@ public class UserAction extends ActionSupport{
         categoryList = new ArrayList<Category>();
         categoryList= categoryDAO.getAllList();
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+        this.user.setName(name);
+    }
+
+    public String getCategory() {
+        return this.category;
+    }
+
+
+    public void setCategory(String category) {
+        this.category = category;
+        this.user.setCategory(category);
+    }
+
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+        this.user.setPhone(phone);
+    }
+
+    public String getMail() {
+        return this.mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+        this.user.setMail(mail);
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+        this.user.setDescription(description);
+    }
+
 
     public List<Category> getCategoryList() {
         System.out.println("*******************************");
