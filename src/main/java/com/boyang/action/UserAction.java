@@ -1,5 +1,6 @@
 package com.boyang.action;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +8,13 @@ import com.boyang.dao.CategoryDAO;
 import com.boyang.model.Category;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+
+import org.apache.struts2.ServletActionContext;
 import com.boyang.dao.UserDAO;
 import com.boyang.model.User;
+import com.alibaba.fastjson.*;
+
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -120,7 +126,9 @@ public class UserAction extends ActionSupport{
         System.out.println(userList.get(0).toString());
         System.out.println(userList.get(1).toString());
         System.out.println(userList.get(2).toString());
-        context.put("userList",userList);
+
+        String jsonUserList = JSON.toJSONString(userList);
+        context.put("userList",jsonUserList);
 
         return "user";
     }
@@ -142,12 +150,19 @@ public class UserAction extends ActionSupport{
 
     public String showUserList()throws Exception{
         UserDAO userDAO = new UserDAO();
-        ActionContext context=ActionContext.getContext();
+
+        HttpServletResponse response=ServletActionContext.getResponse();
+        response.setContentType("text/html;charset=utf-8");
+
+        PrintWriter out= response.getWriter();
 
         List<User> userList = new ArrayList<User>();
         userList=userDAO.getAllList();
+        String jsonUserList = JSON.toJSONString(userList);
 
-        context.put("userList", userList);
+        out.write(jsonUserList);
+        out.flush();
+        out.close();
 
         return "user";
     }

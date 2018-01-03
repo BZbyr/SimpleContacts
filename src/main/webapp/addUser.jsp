@@ -6,14 +6,12 @@
   Date: 2017/12/13 09:57
 --%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" language="java" import="java.util.*, com.boyang.model.*, java.io.*" %>
-<%@ page import="com.boyang.dao.CategoryDAO" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
     <title>addUser</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
-<jsp:useBean id="category" class="com.boyang.dao.CategoryDAO" scope="page"/>
 <body>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>

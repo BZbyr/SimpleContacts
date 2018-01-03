@@ -12,6 +12,10 @@
     <title>userList</title>
 </head>
 <body>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.js"></script>"
+<script type="text/javascript">
+
+</script>
 <center>
     <hr>
     <h1>通讯录</h1>
