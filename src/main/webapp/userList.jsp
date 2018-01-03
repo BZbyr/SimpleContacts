@@ -19,11 +19,14 @@
 <center>
     <hr>
     <h1>通讯录</h1>
+    
     <s:a action="toAddUser">添加联系人</s:a><br>
 
-    <s:a href="deleteContact.jsp">删除联系人</s:a><br>
-
     <s:a action="showUserList">查看所有联系人</s:a><br>
+
+    <%
+        int num = 1;
+    %>
 
     <hr>
     <table>
@@ -34,12 +37,13 @@
             <td>电话</td>
             <td>邮件</td>
             <td>描述</td>
+            <td>操作</td>
         </tr>
 
         <s:iterator var="user" value="#request.userList">
             <tr>
                 <td>
-                    <s:property value="#user.id"/>
+                    <%=num++%>
                 </td>
                 <td>
                     <s:property value="#user.name"/>
@@ -55,6 +59,12 @@
                 </td>
                 <td>
                     <s:property value="#user.description"/>
+                </td>
+                <td>
+                    <s:a action="delUser">
+                        删除
+                        <s:param name="id">${user.id}</s:param>
+                    </s:a>
                 </td>
             </tr>
         </s:iterator>

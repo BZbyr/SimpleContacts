@@ -17,6 +17,10 @@
             <result name="user">/userList.jsp</result>
         </action>
 
+        <action name="delUser" class="com.boyang.action.UserAction" method="delUser">
+            <result name="user">/userList.jsp</result>
+        </action>
+
         <action name="showUserList" class="com.boyang.action.UserAction" method="showUserList">
             <result name="user">/</result>
         </action>

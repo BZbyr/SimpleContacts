@@ -1,6 +1,5 @@
 package com.boyang.action;
 
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,12 +8,11 @@ import com.boyang.model.Category;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-import org.apache.struts2.ServletActionContext;
 import com.boyang.dao.UserDAO;
 import com.boyang.model.User;
-import com.alibaba.fastjson.*;
+import org.apache.struts2.ServletActionContext;
 
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -26,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 public class UserAction extends ActionSupport{
 
     private User user= new User();
+    private int id;
     private String name;
     private String category;
     private String phone;
@@ -37,6 +36,14 @@ public class UserAction extends ActionSupport{
         CategoryDAO categoryDAO = new CategoryDAO();
         categoryList = new ArrayList<Category>();
         categoryList= categoryDAO.getAllList();
+    }
+
+    private int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -92,7 +99,7 @@ public class UserAction extends ActionSupport{
         return categoryList;
     }
 
-    public User getUser(){
+    private User getUser(){
         return user;
     }
     public void setUser(User user) {
@@ -127,8 +134,7 @@ public class UserAction extends ActionSupport{
         System.out.println(userList.get(1).toString());
         System.out.println(userList.get(2).toString());
 
-        String jsonUserList = JSON.toJSONString(userList);
-        context.put("userList",jsonUserList);
+        context.put("userList",userList);
 
         return "user";
     }
@@ -137,7 +143,11 @@ public class UserAction extends ActionSupport{
         UserDAO userDAO = new UserDAO();
         ActionContext context=ActionContext.getContext();
 
-        int id = user.getId();
+        System.out.println("----------------------------------------------------");
+
+        int id = getId();
+        System.out.println("我要删除的"+id);
+        System.out.println("----------------------------------------------------");
 
         userDAO.delete(id);
 
@@ -150,19 +160,11 @@ public class UserAction extends ActionSupport{
 
     public String showUserList()throws Exception{
         UserDAO userDAO = new UserDAO();
-
-        HttpServletResponse response=ServletActionContext.getResponse();
-        response.setContentType("text/html;charset=utf-8");
-
-        PrintWriter out= response.getWriter();
+        ActionContext context=ActionContext.getContext();
 
         List<User> userList = new ArrayList<User>();
         userList=userDAO.getAllList();
-        String jsonUserList = JSON.toJSONString(userList);
-
-        out.write(jsonUserList);
-        out.flush();
-        out.close();
+        context.put("userList",userList);
 
         return "user";
     }

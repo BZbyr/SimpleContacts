@@ -31,10 +31,15 @@ public class UserDAO{
 
     public void delete(int id) {
         Session session = HibernateSessionFactory.getSession();
+        System.out.println("Hibernate要删除的"+id);
+        System.out.println("----------------------------------------------------");
         try {
+            session.beginTransaction();
             // 先根据id查询对象，再判断删除
             User user = (User) session.get(User.class, id);
             if (user != null) {
+                System.out.println("这里 user ！= null");
+                System.out.println("----------------------------------------------------");
                 session.delete(user);
             }
             session.getTransaction().commit();
