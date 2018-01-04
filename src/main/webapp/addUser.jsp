@@ -9,10 +9,17 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>addUser</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
 </head>
 <body>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.js"></script>
@@ -79,21 +86,31 @@ function RgTest() {
     }
     //
 </script>-->
-<center>
-    <s:form action="addUser" id="form" method="POST">
-        <table bgcolor="#0099CC">
-            <tr><s:textfield id="name" name="name" label="联系人姓名" /></tr>
-            <tr><s:textfield id="phone" name="phone" label="联系人电话" /></tr>
-            <tr><s:textfield id="mail" name="mail" label="联系人邮箱" /></tr>
-            <tr><s:textfield id="description" name="description" label="联系人描述"/></tr>
-            <tr><s:select name="category" label="联系人分类" list="categoryList" listKey="id" listValue="name"/></tr>
-            <tr>
-                <td><s:submit id="button" value="提交"/></td>
-            </tr>
-        </table>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">我的通讯录</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <s:form class="form-signin" action="addUser" id="form" method="POST">
+        <h2 class="form-signin-heading">添加联系人</h2>
+        <label for="name" class="sr-only">Name</label>
+        <s:textfield id="name" name="name" placeholder="Name" />
+        <label for="phone" class="sr-only">Phone</label>
+        <s:textfield id="phone" name="phone" placeholder="Phone"/>
+        <label for="mail" class="sr-only">Mail</label>
+        <s:textfield id="mail" name="mail" placeholder="mail"/>
+        <label for="description" class="sr-only">description</label>
+        <s:textfield id="description" name="description" placeholder="description"/>
+        <s:select name="category" list="categoryList" listKey="id" listValue="name"/>
+        <s:submit class="btn btn-lg btn-primary btn-block" id="button" value="提交" />
     </s:form>
-</center>
 
-
+</div>
 </body>
 </html>
