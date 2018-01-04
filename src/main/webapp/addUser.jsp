@@ -42,7 +42,7 @@
                 name: "（必需字段）",
                 phone: {
                     required: "（必需字段）",
-                    minlength: "长度在8-10之间",
+                    minlength: "长度在8-11之间",
                     maxlength: "长度在8-11之间"
                 },
                 mail:{
